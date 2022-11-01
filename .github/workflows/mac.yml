@@ -1,0 +1,32 @@
+name: BuildNGL
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on:  macos-latest
+    steps:
+    - uses: actions/checkout@v2 
+
+    
+    - name: install vcpkg
+      run : |
+        git clone --depth 1  https://github.com/microsoft/vcpkg ~/vcpkg 
+        cd ~/vcpkg 
+        ./bootstrap-vcpkg.sh
+        ./vcpkg install fmt 
+    - name: Configure
+      run: |
+        mkdir build
+        cd build
+        cmake -DCMAKE_TOOLCHAIN_FILE=~/vcpkg/scripts/buildsystems/vcpkg.cmake ..
+               
+    - name: Build
+      run: |
+        cd build
+        threads=`sysctl -n hw.logicalcpu`
+        cmake --build .  --parallel $threads
+    - name: Test
+      run: |
+        cd build
+        ./fmt

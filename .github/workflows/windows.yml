@@ -1,0 +1,33 @@
+name: BuildNGL
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on:  windows-latest
+    steps:
+    - uses: actions/checkout@v2 
+    - uses: ilammy/msvc-dev-cmd@v1.4.1 
+
+
+    
+    - name: install vcpkg
+      run : |
+        git clone --depth 1  https://github.com/microsoft/vcpkg "$HOME/vcpkg" 
+        cd "$HOME/vcpkg" 
+        bootstrap-vcpkg.bat
+        vcpkg install fmt 
+    - name: Configure
+      run: |
+        mkdir build
+        cd build
+        cmake -DCMAKE_TOOLCHAIN_FILE="$HOME/vcpkg/scripts/buildsystems/vcpkg.cmake" -DCMAKE_BUILD_TYPE=Debug ..
+               
+    - name: Build
+      run: |
+        cd build
+        cmake --build .  
+    - name: Test
+      run: |
+        cd build
+        ./fmt
