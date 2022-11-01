@@ -4,4 +4,4 @@ This project gives simple git action templates for cmake and vcpkg based builds 
 
 
 
-[![BuildNGL](https://github.com/jmacey/GitActionExample/actions/workflows/windows.yml/badge.svg)](https://github.com/jmacey/GitActionExample/actions/workflows/windows.yml)[![BuildNGL](https://github.com/jmacey/GitActionExample/actions/workflows/linux.yml/badge.svg)](https://github.com/jmacey/GitActionExample/actions/workflows/linux.yml)[![BuildNGL](https://github.com/jmacey/GitActionExample/actions/workflows/mac.yml/badge.svg)](https://github.com/jmacey/GitActionExample/actions/workflows/mac.yml)
+[![Windows](https://github.com/jmacey/GitActionExample/actions/workflows/windows.yml/badge.svg)](https://github.com/jmacey/GitActionExample/actions/workflows/windows.yml)[![Linux](https://github.com/jmacey/GitActionExample/actions/workflows/linux.yml/badge.svg)](https://github.com/jmacey/GitActionExample/actions/workflows/linux.yml)[![Mac](https://github.com/jmacey/GitActionExample/actions/workflows/mac.yml/badge.svg)](https://github.com/jmacey/GitActionExample/actions/workflows/mac.yml)
