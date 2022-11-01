@@ -22,13 +22,11 @@ jobs:
         cmake -DCMAKE_TOOLCHAIN_FILE=~/vcpkg/scripts/buildsystems/vcpkg.cmake ..
                
     - name: Build
-      working-directory: ${{runner.workspace}}/build
       run: |
         cd build
         threads=`nproc`
         cmake --build .  --parallel $threads
     - name: Test
-      working-directory: ${{runner.workspace}}/build
       run: |
         cd build
         ./fmt
