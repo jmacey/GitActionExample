@@ -16,7 +16,7 @@ jobs:
         git clone --depth 1  https://github.com/microsoft/vcpkg "$HOME/vcpkg" 
         cd "$HOME/vcpkg" 
         bootstrap-vcpkg.bat
-        vcpkg install fmt 
+        vcpkg install fmt:x64-windows 
     - name: Configure
       run: |
         mkdir build
