@@ -1,6 +1,6 @@
 # Git Action Examples
 
-This project gives simple git action templates for cmake and vcpkg based builds under linux, mac and windows. See the .github/workspace folder for the different yml files.
+This project gives simple git action templates for cmake and vcpkg based builds under linux, mac and windows. See the .github/workflows folder for the different yml files.
 
 
 
